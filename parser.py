@@ -3,7 +3,7 @@ import re
 
 # retorna uma lista de pontos ordenada com base no valor de X
 def parse_file(filepath) -> list[Point]:
-    graph = []
+    plot = []
     with open(filepath, 'r') as file:
         i = 1
         for line in file:
@@ -25,8 +25,8 @@ def parse_file(filepath) -> list[Point]:
             except ValueError as e:
                 raise ValueError(f'Valor de Y não pode ser convertido em float:\n{i}:{line}\n{' ' * (len(str(i)) + 1)}{' ' * (len(line) - len(split[1]))}{'^' * len(split[1])}\n{e}')
 
-            graph.append(point.Point(x, y))
+            plot.append(point.Point(x, y))
             
             i += 1
     
-    return sorted(graph, key= lambda e: e.x)
+    return sorted(plot, key= lambda e: e.x)

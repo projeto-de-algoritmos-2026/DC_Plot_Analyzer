@@ -17,14 +17,16 @@ def main():
     else:
         filepath = os.path.realpath(argv[1])
 
-    graph = parser.parse_file(filepath)
-    for i in range(len(graph)):
-        print(f'({graph[i].x}, {graph[i].y})', end='')
-        if i != len(graph) - 1:
+    plot = parser.parse_file(filepath)
+
+    # print do conjunto de pontos
+    for i in range(len(plot)):
+        print(f'({plot[i].x}, {plot[i].y})', end='')
+        if i != len(plot) - 1:
             print(end=', ')
     print()
 
-    arr = [p.y for p in graph]
+    arr = [point.y for point in plot]   # array dos valores de y
 
     print(f'inversions: {count_inversions(arr)}')
 
