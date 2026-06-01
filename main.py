@@ -3,6 +3,9 @@ import parser
 from count_inversions import *
 from sys import argv
 import os
+import stats
+from scipy import stats as st
+from interp_text import interp_text
 
 def main():
     argc = len(argv)
@@ -20,15 +23,26 @@ def main():
     plot = parser.parse_file(filepath)
 
     # print do conjunto de pontos
-    for i in range(len(plot)):
-        print(f'({plot[i].x}, {plot[i].y})', end='')
-        if i != len(plot) - 1:
-            print(end=', ')
-    print()
+    if len(plot) < 30:
+        for i in range(len(plot)):
+            print(f'({plot[i].x}, {plot[i].y})', end='')
+            if i != len(plot) - 1:
+                print(end=', ')
+        print()
+    else:
+        print('large input file, skipping print...')
 
-    arr = [point.y for point in plot]   # array dos valores de y
+    yarr = [point.y for point in plot]   # array dos valores de y
+    xarr = [point.x for point in plot]   # array dos valores de x
 
-    print(f'inversions: {count_inversions(arr)}')
+    inv = count_inversions(yarr)
+    size = len(plot)
+    print(f'inversions: {inv} out of a maximum of {size * (size - 1) / 2:.0f}')
+    tau = stats.kendall_tau(yarr)
+    print(f'kendall tau (τ): {tau:.4f}')
+    print(f'spearman rho (ρ): {stats.spearman_rho(yarr):.4f}')
+    print(interp_text(tau))
+
 
 if __name__ == "__main__":
     main()
