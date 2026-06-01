@@ -233,8 +233,9 @@ class App(tk.Tk):
         n = len(y)
         inv = count_inversions(list(y))
         max_inv = n * (n - 1) // 2
-        tau = kendall_tau(y)
-        rho = spearman_rho(y)
+        x_vals = [p.x for p in pts]
+        tau = kendall_tau(y, x_vals)
+        rho = spearman_rho(y, x_vals)
         color = _metric_color(tau)
 
         self._c_inv.set(f"{inv} / {max_inv}")
