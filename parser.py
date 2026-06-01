@@ -11,7 +11,7 @@ def parse_file(filepath) -> list[Point]:
             y = 0
             
             line = line.strip()
-            split = re.split(r' *,? *', line)
+            split = re.split(r' *, *| +', line)
             if len(split) != 2:
                 raise ValueError(f'Formatação do arquivo de entrada incorreto:\n{i}:{line}')
 
