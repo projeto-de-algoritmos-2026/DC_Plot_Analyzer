@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox, filedialog
 import re
+from interp_text import interp_text
 
 try:
     import matplotlib
@@ -32,14 +33,6 @@ def _metric_color(tau):
     if tau > -0.3: return "#fdcb6e"
     if tau > -0.7: return "#e17055"
     return "#d63031"
-
-
-def _interp_text(tau):
-    if tau > 0.8:  return "Sequência quase perfeitamente ordenada."
-    if tau > 0.4:  return "Correlação positiva moderada."
-    if tau > -0.4: return "Correlação fraca — próxima ao aleatório."
-    if tau > -0.8: return "Correlação negativa moderada."
-    return "Sequência quase em ordem inversa."
 
 
 # ── Componentes ──────────────────────────────────────────────────────────────
@@ -241,7 +234,7 @@ class App(tk.Tk):
         self._c_inv.set(f"{inv} / {max_inv}")
         self._c_tau.set(f"{tau:.4f}", color)
         self._c_rho.set(f"{rho:.4f}", color)
-        self._lbl_interp.config(text=_interp_text(tau))
+        self._lbl_interp.config(text=interp_text(tau))
 
         if HAS_MPL:
             self._draw_plot(pts, y, inv, tau, rho)
