@@ -23,6 +23,8 @@ A interface exibe o número de inversões no formato `atual / máximo`, onde o m
 
 ## Screenshots
 
+![Execução no terminal](utils/terminal.png)
+
 ![Interface do Analisador de Inversões](utils/image.png)
 
 ![Inversa](utils/inversa.png)
