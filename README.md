@@ -3,6 +3,8 @@
 **Número da Lista:** 37<br>
 **Conteúdo da Disciplina:** Dividir e conquistar (D&C)<br>
 
+[Apresentação](https://youtu.be/ba6tTINwxD4)
+
 ## Alunos
 | Matrícula | Aluno |
 | -- | -- |
