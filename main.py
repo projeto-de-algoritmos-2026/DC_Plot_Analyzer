@@ -4,7 +4,6 @@ from count_inversions import *
 from sys import argv
 import os
 import stats
-from scipy import stats as st
 from interp_text import interp_text
 
 def main():
