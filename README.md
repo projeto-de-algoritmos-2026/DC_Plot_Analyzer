@@ -1,4 +1,4 @@
-# Plot Analizer
+# Plot Analyzer
 
 **Número da Lista:** 37<br>
 **Conteúdo da Disciplina:** Dividir e conquistar (D&C)<br>
