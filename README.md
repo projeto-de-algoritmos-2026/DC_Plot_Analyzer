@@ -23,6 +23,16 @@ A interface exibe o número de inversões no formato `atual / máximo`, onde o m
 
 ![Interface do Analisador de Inversões](utils/image.png)
 
+![Inversa](utils/inversa.png)
+
+![Não Linear](utils/naolinear.png)
+
+![Paradoxo de Simpson](utils/simpson.png)
+
+![Curva normal](utils/normal.png)
+
+![Aleatório](utils/aleatorio.png)
+
 ## Instalação
 
 **Pré-requisito:** Python 3.10+ com `matplotlib`.
